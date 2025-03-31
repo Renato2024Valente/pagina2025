@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book de Fotos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom, #3b82f6, #9333ea);
+      color: white;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: white;
+      color: black;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      padding: 16px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .photos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 10px;
+    }
+
+    .photos img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .photos img:hover {
+      transform: scale(1.1);
+    }
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      text-align: center;
+    }
+
+    .modal-content img {
+      width: auto;
+      height: auto;
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: white;
+      color: black;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <h1>Evidência de Trabalho-2025</h1>
+
+  <div class="grid">
+    <!-- Seção 1 -->
+    <div class="card">
+      <h2>Robótica 1ºAnos Atividade Plugada Programação e Microcontrolador</h2>
+      <div class="photos">
+        <img src="ROBOTICA 1º ANOS/WhatsApp Image 2025-02-10 at 14.00.57.jpeg" alt="Foto Robótica 1" onclick="openModal(this)">
+        <img src="ROBOTICA 1º ANOS/WhatsApp Image 2025-02-10 at 14.02.55 (1).jpeg" alt="Foto Robótica 2" onclick="openModal(this)">
+        <img src="ROBOTICA 1º ANOS/WhatsApp Image 2025-02-10 at 14.02.54.jpeg" alt="Foto Robótica 3" onclick="openModal(this)">
+        <img src="ROBOTICA 1º ANOS/WhatsApp Image 2025-02-10 at 14.02.55 (2).jpeg" alt="Foto Robótica 4" onclick="openModal(this)">
+        <img src="ROBOTICA 1º ANOS/WhatsApp Image 2025-02-10 at 14.02.55.jpeg" alt="Foto Robótica 5" onclick="openModal(this)">
+        <img src="ROBOTICA 1º ANOS/WhatsApp Image 2025-02-10 at 14.02.57 (1).jpeg" alt="Foto Robótica 6" onclick="openModal(this)">
+        <img src="ROBOTICA 1º ANOS/WhatsApp Image 2025-02-10 at 14.02.57.jpeg" alt="Foto Robótica 7" onclick="openModal(this)">
+        <img src="1ºA/1f53a17e-e579-490c-91ce-a1b9c0e77595.jfif" alt="Foto Robótica 8" onclick="openModal(this)">
+        <img src="1ºA/2fa76eec-87ce-4dab-a03a-3db751ce5a3e.jfif" alt="Foto Robótica 9" onclick="openModal(this)">
+        <img src="1ºA/9dc597b3-cdbd-476b-b2e2-db4026efb231 (1).jfif" alt="Foto Robótica 10" onclick="openModal(this)">
+        <img src="1ºA/9dc597b3-cdbd-476b-b2e2-db4026efb231 (1).jfif" alt="Foto Robótica 11" onclick="openModal(this)">
+        <img src="1ºA/9dc597b3-cdbd-476b-b2e2-db4026efb231.jfif" alt="Foto Robótica 12" onclick="openModal(this)">
+        <img src="1ºA/e5f6b421-fa29-4d05-9303-f85588d15c32.jfif" alt="Foto Robótica 13" onclick="openModal(this)">
+        <img src="1ºA/ee087f0f-e4e3-4c6a-96b8-b26b8a300a87.jfif" alt="Foto Robótica 14" onclick="openModal(this)">
+        <img src="1ºA/fdb8272d-9736-45d2-bb85-903406b64feb.jfif" alt="Foto Robótica 15" onclick="openModal(this)">
+        <img src="ROBOTICA 1º ANOS/WhatsApp Image 2025-02-10 at 14.03.00 (1).jpeg" alt="Foto Robótica 16" onclick="openModal(this)">
+        <img src="ROBOTICA 1º ANOS/WhatsApp Image 2025-02-10 at 14.02.56.jpeg" alt="Foto Robótica 17" onclick="openModal(this)">
+        <img src="ROBOTICA 1º ANOS/WhatsApp Image 2025-02-10 at 14.02.55 (2).jpeg" alt="Foto Robótica 18" onclick="openModal(this)">
+        <img src="1ºA/9dc597b3-cdbd-476b-b2e2-db4026efb231 (1).jfif" alt="Foto Robótica 19" onclick="openModal(this)">
+      
+      </div>
+      </div>
+            </div>
+    </div>
+    <div class="grid">
+    <div class="card">
+      <h2>Robótica 6ºAnos</h2>
+      <div class="photos">
+        <img src="Robotica 6º anos/WhatsApp Image 2025-03-12 at 09.22.18 (1).jpeg" alt="Foto Robótica 1" onclick="openModal(this)">
+        <img src="Robotica 6º anos/WhatsApp Image 2025-03-12 at 09.22.19 (1).jpeg" alt="Foto Robótica 2" onclick="openModal(this)">
+        <img src="Robotica 6º anos/WhatsApp Image 2025-03-12 at 09.22.19.jpeg" alt="Foto Robótica 3" onclick="openModal(this)">
+        <img src="Robotica 6º anos/WhatsApp Image 2025-03-12 at 10.55.02 (1).jpeg" alt="Foto Robótica 4" onclick="openModal(this)">
+        <img src="Robotica 6º anos/WhatsApp Image 2025-03-12 at 10.55.02.jpeg" alt="Foto Robótica 5" onclick="openModal(this)">
+        <img src="Robotica 6º anos/WhatsApp Image 2025-03-12 at 10.55.03 (1).jpeg" alt="Foto Robótica 6" onclick="openModal(this)">
+        <img src="Robotica 6º anos/WhatsApp Image 2025-03-12 at 10.55.03.jpeg" alt="Foto Robótica 7" onclick="openModal(this)">
+        <img src="Robotica 6º anos/WhatsApp Image 2025-03-12 at 10.55.03.jpeg" alt="Foto Robótica 8" onclick="openModal(this)">
+        <img src="Robotica 6º anos/WhatsApp Image 2025-03-12 at 10.55.04.jpeg" alt="Foto Robótica 9" onclick="openModal(this)">
+        <img src="Robotica 6º anos/WhatsApp Image 2025-03-12 at 10.55.05.jpeg" alt="Foto Robótica 10" onclick="openModal(this)">
+        
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Robótica 8º anos aplicação dos Projetos Makecode</h2>
+      <div class="photos">
+        <img src="Robotica 8º anos/WhatsApp Image 2025-03-12 at 09.22.20.jpeg" alt="Foto Robótica 1" onclick="openModal(this)">
+        <img src="Robotica 8º anos/WhatsApp Image 2025-03-12 at 09.22.21.jpeg" alt="Foto Robótica 2" onclick="openModal(this)">
+        <img src="Robotica 8º anos/WhatsApp Image 2025-03-12 at 09.22.22.jpeg" alt="Foto Robótica 3" onclick="openModal(this)">
+        <img src="" alt="Foto Robótica 4" onclick="openModal(this)">
+        <img src="" alt="Foto Robótica 5" onclick="openModal(this)">
+        <img src="" alt="Foto Robótica 6" onclick="openModal(this)">
+        <img src="" alt="Foto Robótica 7" onclick="openModal(this)">
+        <img src="" alt="Foto Robótica 8" onclick="openModal(this)">
+        <img src="" alt="Foto Robótica 9" onclick="openModal(this)">
+      </div>
+    </div>
+
+
+    <div class="card">
+      <h2>Física 2º Anos  Atividade Plugada Termometria e Dilatação termica</h2>
+      <div class="photos">
+        <img src="Fisica 2º anos/42943aac-698c-4827-b0ea-fa0f1cabb413.jfif" alt="Foto Fisica 1" onclick="openModal(this)">
+        <img src="Fisica 2º anos/4d818a26-51fc-40a7-b17d-7446e54a5d50.jfif" alt="Foto Fisica 2" onclick="openModal(this)">
+        <img src="Fisica 2º anos/b22079ce-b46b-4a28-a23f-befb56c49826.jfif" alt="Foto Fisica 3" onclick="openModal(this)">
+        <img src="Fisica 2º anos/ea69db15-7d62-47f7-891a-015459e77433.jfif" alt="Foto Fisica 4" onclick="openModal(this)">
+        <img src="Fisica 2º anos/WhatsApp Image 2025-03-12 at 09.18.16 (1).jpeg" alt="Foto Fisica 5" onclick="openModal(this)">
+        <img src="Fisica 2º anos/WhatsApp Image 2025-03-12 at 09.18.16.jpeg" alt="Foto Fisica 6" onclick="openModal(this)">
+        <img src="Fisica 2º anos/WhatsApp Image 2025-03-12 at 09.18.17 (1).jpeg" alt="Foto Fisica 7" onclick="openModal(this)">
+        <img src="Fisica 2º anos/WhatsApp Image 2025-03-12 at 09.18.17 (2).jpeg" alt="Foto Fisica 8" onclick="openModal(this)">
+        <img src="Fisica 2º anos/WhatsApp Image 2025-03-12 at 09.18.17.jpeg" alt="Foto Fisica 9" onclick="openModal(this)">
+        <img src="" alt="Foto Robótica 3" onclick="openModal(this)">
+        
+      </div>
+    </div>
+
+
+    <div class="card">
+      <h2>Fisica 3º Anos Atividade Plugada com Ondas e frequencias em hertz</h2>
+      <div class="photos">
+        <img src="Fisica 3º anos/1700dd1b-c1ed-434e-a4b1-82b2f3be36c8.jfif" alt="Foto Fisica1" onclick="openModal(this)">
+        <img src="Fisica 3º anos/3dad074a-2454-4013-8965-e1994d8bcd41.jfif" alt="Foto Fisica 2" onclick="openModal(this)">
+        <img src="Fisica 3º anos/3ff645cb-768e-480d-b769-260d98ea67e1.jfif" alt="Foto Fisica 3" onclick="openModal(this)">
+        <img src="Fisica 3º anos/4a909207-9d84-482e-82b8-44df7a65fec0.jfif" alt="Foto Fisica 4" onclick="openModal(this)">
+        <img src="Fisica 3º anos/78016d2c-e639-423d-b66e-b9e0baf5108b.jfif" alt="Foto Fisica 5" onclick="openModal(this)">
+        <img src="Fisica 3º anos/d7e8eaef-b821-43a8-92ea-4b8e3f252246.jfif" alt="Foto Fisica 6" onclick="openModal(this)">
+        <img src="Fisica 3º anos/e5c7d050-8353-4446-9b89-9eacbe64b9cc.jfif" alt="Foto Fisica 7" onclick="openModal(this)">
+        <img src="Fisica 3º anos/WhatsApp Image 2025-02-13 at 10.18.38.jpeg" alt="Foto Fisica 8" onclick="openModal(this)">
+        <img src="Fisica 3º anos/WhatsApp Image 2025-03-12 at 09.22.13 (1).jpeg" alt="Foto Fisica 9" onclick="openModal(this)">
+        <img src="Fisica 3º anos/WhatsApp Image 2025-03-12 at 09.22.14.jpeg" alt="Foto Fisica 10" onclick="openModal(this)">
+        <img src="Fisica 3º anos/WhatsApp Image 2025-03-12 at 09.22.15 (1).jpeg" alt="Foto Fisica 11" onclick="openModal(this)">
+        <img src="Fisica 3º anos/WhatsApp Image 2025-03-12 at 09.22.15 (1).jpeg" alt="Foto Fisica 12" onclick="openModal(this)">
+        <img src="Fisica 3º anos/WhatsApp Image 2025-03-12 at 09.22.16.jpeg" alt="Foto Fisica 13" onclick="openModal(this)">
+      </div>
+      </div>
+
+      <div class="card">
+        <h2>Programação 3ºB Atividade Plugada com Alura StartLab</h2>
+        <div class="photos">
+          <img src="Programação/nave.jpeg" alt="nave 3ºB" onclick="openModal(this)">
+          <img src="Programação/cadastro.jpeg" alt="Cadastro" onclick="openModal(this)">
+          <img src="Programação/calculadora.jpeg" alt="calculadora" onclick="openModal(this)">
+          
+        </div>
+        </div>
+      </div>
+
+      </div>
+
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Corresponsabilidade ( Alinhamento de Robótica )</h2>
+      <div class="photos">
+        <img src="Corresponsabilidade professores/2c82c0b2-184d-4118-b31c-134a80a00a58.jfif" alt="Sala maker" onclick="openModal(this)">
+        <img src="Corresponsabilidade professores/7290bef1-ab01-41eb-b71d-ce5cb1a3dc48.jfif" alt="Foto Robótica 2" onclick="openModal(this)">
+        <img src="Corresponsabilidade professores/8672038b-f7bb-45f3-a12f-7b01ac642987.jfif" alt="Foto Robótica 4" onclick="openModal(this)">      
+        <img src="Corresponsabilidade professores/9ad59489-c93a-405c-bd92-f097e65d2a43.jfif" alt="Foto Robótica 5" onclick="openModal(this)">
+        <img src="Corresponsabilidade professores/ca94e7fb-1ce8-4509-bd98-111c3385a5a8.jfif" alt="Foto Robótica 6" onclick="openModal(this)">
+        <img src="Corresponsabilidade professores/WhatsApp Image 2025-02-12 at 17.47.45.jpeg" alt="Foto Robótica 7" onclick="openModal(this)">
+        <img src="Corresponsabilidade professores/WhatsApp Image 2025-02-12 at 17.47.46 (1).jpeg" alt="Foto Robótica 8" onclick="openModal(this)">
+        <img src="Corresponsabilidade professores/WhatsApp Image 2025-02-12 at 17.47.46.jpeg" alt="Foto Robótica 9" onclick="openModal(this)">
+        <img src="" alt="Foto Robótica 3" onclick="openModal(this)">
+            </div>
+    </div>
+
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content" id="modal-content">
+      <button class="close" onclick="closeModal()">&times;</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal(imageElement) {
+      const modal = document.getElementById('modal');
+      const modalContent = document.getElementById('modal-content');
+
+      // Limpar conteúdo anterior
+      modalContent.innerHTML = '<button class="close" onclick="closeModal()">&times;</button>';
+
+      // Adicionar imagem no modal
+      const img = document.createElement('img');
+      img.src = imageElement.src;
+      img.alt = imageElement.alt;
+      modalContent.appendChild(img);
+
+      // Mostrar modal
+      modal.classList.add('active');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('modal');
+      modal.classList.remove('active');
+    }
+  </script>
+</body>
+</html>

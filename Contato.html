@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato do Professor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1E3C72, #2A5298);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .info {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .button {
+            display: inline-block;
+            background: #ffcc00;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background: #ff9900;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contato do Professor</h1>
+        <p class="info"><strong>Email:</strong> renatopvalente@prof.educacao.sp.gov.br</p>
+        <p class="info"><strong>Telefone:</strong> (14) 99101-6098</p>
+        <p class="info"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/renato-valente-85a081299/" class="button">Visitar LinkedIn</a></p>
+    </div>
+</body>
+</html>

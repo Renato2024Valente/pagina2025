@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Evidências do Plano de Ação</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #709cd7;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .evidencia-bloco {
+      background: white;
+      width: 90%;
+      max-width: 900px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      overflow: hidden;
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .evidencia-bloco img {
+      width: 250px;
+      border-radius: 8px;
+      border: 2px solid #ccc;
+    }
+
+    .texto-descricao {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .texto-descricao strong {
+      display: block;
+      margin-top: 10px;
+      color: #00796b;
+    }
+
+    @media (max-width: 700px) {
+      .evidencia-bloco {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .evidencia-bloco img, .texto-descricao {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Evidências do Plano de Ação</h1>
+
+  <div class="main-container">
+
+    <!-- MELHORIAS PROGRAMADAS PELO PROFESSOR -->
+    <div class="evidencia-bloco">
+      <img src="Corresponsabilidade professores/apli1.jpg" alt="Aplicativo Tutoria Digital">
+      <div class="texto-descricao">
+        <strong>Ação:</strong> Desenvolvimento do sistema de Tutoria Digital.
+        <strong>Premissa:</strong> Otimizar o acompanhamento individualizado dos alunos.
+        <p>Sistema web criado pelo professor com campos personalizados para registro de tutor, aluno, série e projeto de vida. Auxilia na organização dos dados e melhora a comunicação escolar.</p>
+      </div>
+    </div>
+
+    <div class="evidencia-bloco">
+      <img src="Corresponsabilidade professores/apli2.jpg" alt="Portal Escolar Bicudo">
+      <div class="texto-descricao">
+        <strong>Ação:</strong> Criação do Portal Escolar Monsenhor Bicudo.
+        <strong>Premissa:</strong> Centralizar as ações pedagógicas e facilitar o acesso à informação.
+        <p>Portal criado pelo professor com áreas de gestão, avisos e acesso para professores e gestores. Agrega as ferramentas da escola em um só lugar.</p>
+      </div>
+    </div>
+
+    <div class="evidencia-bloco">
+      <img src="Corresponsabilidade professores/G4.jpeg" alt="Sistema de Votação Gremista">
+      <div class="texto-descricao">
+        <strong>Ação:</strong> Sistema de votação digital para o grêmio estudantil.
+        <strong>Premissa:</strong> Modernização do processo democrático com segurança e praticidade.
+        <p>Aplicação desenvolvida pelo professor com interface simples e intuitiva para votação das chapas. Incentiva o protagonismo juvenil e a responsabilidade cívica dos alunos.</p>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
