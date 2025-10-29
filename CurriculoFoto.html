@@ -1,117 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Book de Fotos</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(to bottom, #3b82f6, #9333ea);
-      color: white;
-      padding: 20px;
+    :root{
+      --grad1:#3b82f6; --grad2:#9333ea;
     }
-
-    h1 {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:'Inter',system-ui,Segoe UI,Arial;
+      background: linear-gradient(to bottom, var(--grad1), var(--grad2));
+      color:#fff; padding:20px;
     }
+    h1{ text-align:center; font-size:2.2rem; margin:10px 0 24px }
 
-    .grid {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      margin-bottom: 40px;
+    .grid{
+      display:grid; gap:20px;
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+      margin-bottom:40px;
     }
-
-    .card {
-      background: white;
-      color: black;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-      padding: 16px;
-      transition: transform 0.3s;
+    .card{
+      background:#fff; color:#111; border-radius:16px;
+      box-shadow:0 4px 10px rgba(0,0,0,.2);
+      overflow:hidden; padding:16px; transition:transform .3s;
     }
+    .card:hover{ transform:scale(1.02) }
+    .card h2{ font-size:1.2rem; margin:0 0 10px }
 
-    .card:hover {
-      transform: scale(1.03);
+    .photos{
+      display:grid; gap:10px;
+      grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
     }
-
-    .card h2 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
+    .photos img{
+      width:100%; height:100px; object-fit:cover;
+      border-radius:8px; cursor:pointer; transition:transform .25s;
     }
+    .photos img:hover{ transform:scale(1.06) }
 
-    .photos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 10px;
+    /* Modal */
+    .modal{
+      position:fixed; inset:0; display:none;
+      align-items:center; justify-content:center;
+      background:rgba(0,0,0,.85); z-index:9999;
     }
-
-    .photos img {
-      width: 100%;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.3s;
+    .modal.active{ display:flex }
+    .modal-content{
+      position:relative; max-width:90vw; max-height:90vh; text-align:center;
     }
-
-    .photos img:hover {
-      transform: scale(1.1);
+    .modal-content img{
+      max-width:90vw; max-height:80vh; width:auto; height:auto; border-radius:8px;
     }
-
-    .modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
+    .close, .nav{
+      position:absolute; top:12px;
+      background:#fff; color:#111; border:none; cursor:pointer;
+      border-radius:999px; width:40px; height:40px; display:flex;
+      align-items:center; justify-content:center; font-size:1.4rem;
+      box-shadow:0 2px 5px rgba(0,0,0,.3);
     }
-
-    .modal.active {
-      display: flex;
+    .close{ right:12px }
+    .nav{ top:50%; transform:translateY(-50%); font-size:1.2rem }
+    .prev{ left:-52px }
+    .next{ right:-52px }
+    @media (max-width:600px){
+      .prev{ left:8px } .next{ right:8px }
     }
-
-    .modal-content {
-      max-width: 90%;
-      max-height: 90%;
-      text-align: center;
-    }
-
-    .modal-content img {
-      width: auto;
-      height: auto;
-      max-width: 90vw;
-      max-height: 90vh;
-      border-radius: 8px;
-      transition: transform 0.3s;
-    }
-
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: white;
-      color: black;
-      border: none;
-      border-radius: 50%;
-      font-size: 1.5rem;
-      cursor: pointer;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    .caption{
+      color:#eee; margin-top:8px; font-size:.95rem;
     }
   </style>
 </head>
@@ -119,44 +76,146 @@
   <h1>Formação</h1>
 
   <div class="grid">
-    <!-- Seção 1 -->
     <div class="card">
-      <h2>Formação_ Plugada ao Piaf.2025</h2>
-      <!-- Adicionar as Fotos das formaçoes -->
-      <div class="photos">
-        <img src="..." alt="Formação" onclick="openModal(this)">
-         </div>
+      <h2>Formação — Plugada ao PDI 2025</h2>
+      <div class="photos" id="galeria-1">
+        <!-- IMPORTANTE: use 'formacao/' sem acentos no nome da pasta -->
+        <img class="photo" src="formação/adm.png" alt="MBA Administração">
+        <img class="photo" src="formação/ads.png" alt="Pós Análise e Desenvolvimento de Sistemas">
+        <!-- Substitua os 'src' abaixo por imagens reais -->
+        <img class="photo" src="formação/autom.png" alt="Automação e controle">
+        <img class="photo" src="formação/backend.png" alt="Backend">
+        <img class="photo" src="formação/ciecias bi.png" alt="Ciências Biológicas">
+      </div>
+    </div>
+  </div>
 
-    
-  <!-- Modal -->
-  <div id="modal" class="modal">
-    <div class="modal-content" id="modal-content">
-      <button class="close" onclick="closeModal()">&times;</button>
+  <div class="grid">
+    <div class="card">
+      <h2>Formação — Plugada ao PDI 2025</h2>
+      <div class="photos" id="galeria-1">
+        <!-- IMPORTANTE: use 'formacao/' sem acentos no nome da pasta -->
+        <img class="photo" src="formação/ciencias compu.png" alt="ciencias da computação">
+        <img class="photo" src="formação/empreee.png" alt="MBA Empreendedorismo">
+        <!-- Substitua os 'src' abaixo por imagens reais -->
+        <img class="photo" src="formação/eng roboti.png" alt="Engenharia em Robótica">
+        <img class="photo" src="formação/especializa mat.png" alt="Especialização em Matemática">
+        <img class="photo" src="formação/estatisc apli.png" alt="Estatística Aplicada">
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Formação — Plugada ao PDI 2025</h2>
+      <div class="photos" id="galeria-1">
+        <!-- IMPORTANTE: use 'formacao/' sem acentos no nome da pasta -->
+        <img class="photo" src="formação/fisica.png" alt="licenciatura em física">
+        <img class="photo" src="formação/front end.png" alt="Especialização em Front-end">
+        <!-- Substitua os 'src' abaixo por imagens reais -->
+        <img class="photo" src="formação/full stak.png" alt="Especialização em Full Stack">
+        <img class="photo" src="formação/IA.png" alt="Especialização em Inteligência Artificial">
+        <img class="photo" src="formação/IOT.png" alt="Estatística internet das coisas">
+      </div>
+    </div>
+  </div>
+
+   <div class="grid">
+    <div class="card">
+      <h2>Formação — Plugada ao PDI 2025</h2>
+      <div class="photos" id="galeria-1">
+        <!-- IMPORTANTE: use 'formacao/' sem acentos no nome da pasta -->
+        <img class="photo" src="formação/jogos digitais.png" alt="Especialização em Jogos Digitais">
+        <img class="photo" src="formação/mat lic.png" alt="Licenciaturas em Matemática">
+        <!-- Substitua os 'src' abaixo por imagens reais -->
+        <img class="photo" src="formação/logistica.png" alt="MBA em Logística">
+        <img class="photo" src="formação/lic quimica.png" alt="Licenciaturas em Química">
+        <img class="photo" src="formação/pedagogia.png" alt="Licenciaturas em Pedagogia">
+        <img class="photo" src="formação/tec java.png" alt="Especialização em Tecnologia Java">
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal (fora da grid para evitar problemas de layout) -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" id="btnClose" aria-label="Fechar">&times;</button>
+      <button class="nav prev" id="btnPrev" aria-label="Anterior">&#10094;</button>
+      <img id="modalImg" alt="">
+      <button class="nav next" id="btnNext" aria-label="Próxima">&#10095;</button>
+      <div class="caption" id="caption"></div>
     </div>
   </div>
 
   <script>
-    function openModal(imageElement) {
-      const modal = document.getElementById('modal');
-      const modalContent = document.getElementById('modal-content');
+    // Coleta todas as imagens clicáveis
+    const photos = Array.from(document.querySelectorAll('.photo'));
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+    const caption = document.getElementById('caption');
+    const btnClose = document.getElementById('btnClose');
+    const btnPrev = document.getElementById('btnPrev');
+    const btnNext = document.getElementById('btnNext');
 
-      // Limpar conteúdo anterior
-      modalContent.innerHTML = '<button class="close" onclick="closeModal()">&times;</button>';
+    let currentIndex = -1;
 
-      // Adicionar imagem no modal
-      const img = document.createElement('img');
-      img.src = imageElement.src;
-      img.alt = imageElement.alt;
-      modalContent.appendChild(img);
+    // Abre o modal numa posição específica
+    function openAt(index){
+      if(index < 0 || index >= photos.length) return;
+      const el = photos[index];
 
-      // Mostrar modal
-      modal.classList.add('active');
+      // Se a imagem não carregar, aborta a abertura
+      const testImg = new Image();
+      testImg.onload = () => {
+        currentIndex = index;
+        modalImg.src = el.src;
+        modalImg.alt = el.alt || '';
+        caption.textContent = el.alt || '';
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        modal.setAttribute('aria-hidden', 'false');
+      };
+      testImg.onerror = () => {
+        alert('Imagem não encontrada: ' + el.src + '\nConfira o caminho (evite acentos em pastas/arquivos).');
+      };
+      testImg.src = el.src;
     }
 
-    function closeModal() {
-      const modal = document.getElementById('modal');
+    // Navegação
+    function showNext(){ openAt((currentIndex + 1) % photos.length); }
+    function showPrev(){ openAt((currentIndex - 1 + photos.length) % photos.length); }
+
+    // Fecha modal
+    function closeModal(){
       modal.classList.remove('active');
+      document.body.style.overflow = '';
+      modal.setAttribute('aria-hidden', 'true');
+      // limpa src para liberar memória em mobile
+      modalImg.src = '';
     }
+
+    // Eventos nas miniaturas
+    photos.forEach((img, i) => {
+      img.addEventListener('click', () => openAt(i));
+    });
+
+    // Botões
+    btnClose.addEventListener('click', closeModal);
+    btnNext.addEventListener('click', showNext);
+    btnPrev.addEventListener('click', showPrev);
+
+    // Fechar ao clicar no fundo escuro
+    modal.addEventListener('click', (e) => {
+      if(e.target === modal) closeModal();
+    });
+
+    // Teclado: ESC fecha, setas navegam
+    window.addEventListener('keydown', (e) => {
+      if(!modal.classList.contains('active')) return;
+      if(e.key === 'Escape') closeModal();
+      if(e.key === 'ArrowRight') showNext();
+      if(e.key === 'ArrowLeft') showPrev();
+    });
   </script>
 </body>
 </html>

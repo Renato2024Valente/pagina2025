@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Certificado — Modelo (AMOSTRA)</title>
+<style>
+  @font-face{font-family:ser;src:local("Georgia"),serif;}
+  body{
+    margin:0;
+    background:#f0f2f5;
+    font-family: "ser", Georgia, serif;
+    -webkit-print-color-adjust: exact;
+  }
+  .page{
+    width: 1200px;
+    height: 850px;
+    margin:30px auto;
+    background: #ffffff;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+    border: 8px solid #0f2740;
+    box-sizing: border-box;
+  }
+  .inner{
+    padding: 40px 60px;
+    position: relative;
+    height: calc(100% - 80px);
+  }
+  header{
+    display:flex;
+    align-items:center;
+    gap:20px;
+  }
+  .logo{
+    width:140px;
+    height:80px;
+    background: linear-gradient(90deg,#193a63,#2b6b99);
+    border-radius:6px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-weight:700;
+    letter-spacing:0.8px;
+  }
+  h1.title{
+    margin:0;
+    font-size:34px;
+    color:#0b2a4a;
+    letter-spacing:1px;
+  }
+  .seal{
+    position:absolute;
+    right:60px;
+    top:40px;
+    text-align:center;
+    color:#074068;
+    opacity:0.85;
+  }
+  .content{
+    margin-top:30px;
+    text-align:center;
+    color:#123b5a;
+  }
+  .intro{
+    font-size:16px;
+    color:#324e63;
+    margin:18px auto;
+    max-width:900px;
+    line-height:1.5;
+  }
+  .name{
+    font-size:36px;
+    margin:18px 0;
+    letter-spacing:1px;
+    font-weight:700;
+  }
+  .meta{
+    font-size:16px;
+    color:#45617a;
+    margin-bottom:18px;
+  }
+  .signs{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-top:70px;
+    padding:0 40px;
+  }
+  .sign{
+    text-align:center;
+    width:260px;
+  }
+  .sign .line{
+    border-top:1px solid #c8d7e3;
+    margin-top:6px;
+    padding-top:8px;
+    color:#3a556d;
+  }
+  /* watermark */
+  .watermark{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%) rotate(-25deg);
+    font-size:96px;
+    color:rgba(10,20,30,0.06);
+    font-weight:800;
+    letter-spacing:8px;
+    pointer-events:none;
+    user-select:none;
+    white-space:nowrap;
+  }
+
+  /* footer small text */
+  .footer{
+    position:absolute;
+    bottom:18px;
+    left:60px;
+    right:60px;
+    text-align:center;
+    color:#6b8598;
+    font-size:12px;
+  }
+
+  /* print sizing */
+  @media print{
+    body{background:white;}
+    .page{box-shadow:none; margin:0; border:6px solid #0f2740;}
+  }
+</style>
+</head>
+<body>
+  <div class="page" role="main" aria-label="Certificado modelo — AMOSTRA">
+    <div class="watermark">AMOSTRA — NÃO É VÁLIDO</div>
+
+    <div class="inner">
+      <header>
+        <div class="logo">UNIVERSIDADE</div>
+        <div>
+          <h1 class="title">Centro Universitário — Modelo de Certificado</h1>
+          <div style="color:#2b5a78; margin-top:6px; font-size:13px">Modelo para demonstração / portfólio</div>
+        </div>
+      </header>
+
+      <div class="seal">
+        <div style="width:120px;height:120px;border-radius:999px;border:6px solid rgba(11,42,70,0.15); display:flex; align-items:center; justify-content:center; font-size:12px;">
+          SELO DE EXEMPLO
+        </div>
+      </div>
+
+      <div class="content">
+        <p class="intro">
+          O Reitor do Centro Universitário (modelo), no uso de suas atribuições e tendo em vista a conclusão do Curso indicado, confere o presente Certificado a:
+        </p>
+
+        <div class="name">Renato david Valente</div>
+
+        <div class="meta">
+          Portador do documento RG: <strong>22419 3004</strong> — CPF: <strong>221.422.338-05</strong><br>
+          concluiu o curso de <strong>Bacharelado em Ciências da Computação</strong>, com todas as competências previstas no currículo. 
+        </div>
+
+        <p class="intro" style="margin-top:8px">
+          Este documento é uma <strong>AMOSTRA</strong> gerada para fins de apresentação e não constitui documento oficial emitido por qualquer instituição.
+        </p>
+
+        <div class="signs" aria-hidden="true">
+          <div class="sign">
+            <div style="height:48px;"></div>
+            <div class="line">Secretaria Geral — Assinatura</div>
+          </div>
+
+          <div class="sign">
+            <div style="height:48px;"></div>
+            <div class="line">Reitor — Assinatura</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        Modelo criado por ChatGPT — AMOSTRA. NÃO É VÁLIDO COMO DOCUMENTO OFICIAL.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
